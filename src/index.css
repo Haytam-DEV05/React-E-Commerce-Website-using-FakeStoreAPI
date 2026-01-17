@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+
+body[theme="light"] {
+    --bg: #FFFFFF;
+    --primary: #212121;
+    --text: #555555;
+    --card: #FFFFFF;
+    --buttons: #1E88E5;
+    --hover: #2A2A2A;
+}
+
+
+body[theme="dark"] {
+    --bg: #121212;
+    --primary: #E0E0E0;
+    --text: #B0B0B0;
+    --card: #1E1E1E;
+    --buttons: #1E88E5;
+    --hover: #2A2A2A;
+}
+
+
+body {
+    background: var(--bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary);
+}
+
+p {
+    color: var(--text);
+}
+
+.btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: var(--primary);
+    transition: .4s;
+}
+
+.btn:hover {
+    transform: translateY(-7px);
+}
+
+.btn.btn-primary {
+    background-color: var(--buttons);
+    border-radius: 10px;
+}
+
+span.primary {
+    color: var(--buttons);
+}
+
+svg {
+    /* color: var(--text); */
+}
+
+
+
+
+.fade-in {
+    animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

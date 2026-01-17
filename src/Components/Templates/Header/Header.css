@@ -1,0 +1,34 @@
+nav .cart .icon-cart-shop {
+    position: relative;
+}
+
+nav .cart .length-cart {
+    position: absolute;
+    background-color: red;
+    height: 20px;
+    width: 20px;
+    top: 0px;
+    border-radius: 50%;
+    left: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+
+nav .cart .cart-items {
+    position: fixed;
+    min-height: 100vh;
+    background-color: #e8d6d6;
+    width: 300px;
+    top: 0;
+    right: 0;
+}
+
+
+
+nav .cart .bottom-cart {
+    position: absolute;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+}
