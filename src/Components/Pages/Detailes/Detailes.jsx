@@ -62,7 +62,7 @@ export default function Detailes() {
       {/* RELATED PRODUCTS */}
       <h3 className="text-xl font-semibold mb-6">Related Products</h3>
 
-      <div className="md:grid grid-cols-4 gap-7">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7">
         {relatedProducts.map((product) => (
           <div
             key={product.id}
@@ -74,7 +74,7 @@ export default function Detailes() {
               alt={product.title}
               className="h-40 object-contain mx-auto mb-2"
             />
-            <h4 className="text-sm font-semibold line-clamp-2">
+            <h4 className="text-sm font-semibold Related Products">
               {product.title}
             </h4>
             <p className="font-bold mt-2">{product.price} DH</p>

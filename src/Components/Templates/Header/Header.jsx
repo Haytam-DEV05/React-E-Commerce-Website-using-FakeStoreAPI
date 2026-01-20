@@ -27,10 +27,10 @@ export default function Header() {
   function Layout() {
     return (
       <>
-        <nav className="fixed w-full right-0 left-0 backdrop-blur-md z-90 shadow-md text-[var(--text)]">
-          <div className="flex flex-row justify-around items-center min-h-[70px]">
+        <nav className="fixed w-full right-0 left-0 backdrop-blur-md z-90 shadow-md text-(--text)">
+          <div className="flex flex-row justify-around items-center min-h-17.5">
             <div className="logo">
-              <h3 className="text-[25px] font-semibold text-[25px] font-semibold cursor-pointer">
+              <h3 className="text-[25px] font-semibold cursor-pointer">
                 Ecommerce
               </h3>
             </div>
@@ -46,7 +46,7 @@ export default function Header() {
                 {/* CART-ITEMS */}
                 <div className={`cart-items ${openCart ? "block" : "hidden"}`}>
                   {/* TOP CART */}
-                  <div className="top-cart border-b-2 border-[var(--bg)] pb-2">
+                  <div className="top-cart border-b-2 border-(--bg) pb-2">
                     <div
                       className="mt-3 ml-3"
                       onClick={() => setOpenCart(false)}
@@ -71,7 +71,7 @@ export default function Header() {
                           <img
                             src={item.image}
                             alt={item.title}
-                            className="w-[50px] h-[50px] object-contain"
+                            className="w-12.5 h-12.5 object-contain"
                           />
 
                           <div className="flex-1">
@@ -97,12 +97,12 @@ export default function Header() {
                   {/* ======= */}
                   {/* ITEMS-CART */}
                   {/* BOOTOM CART */}
-                  <div className="bottom-cart border-t-2 border-[var(--bg)]">
+                  <div className="bottom-cart border-t-2 border-(--bg)">
                     <p className="text-[20px] text-center mb-2">
                       <span className="primary">Price :</span>
                       {totalPrice.toFixed(2)} DH
                     </p>
-                    <button className="bg-[var(--buttons)] py-1 text-[#fff] cursor-pointer rounded-2xl shadow-md hover:-translate-y-2 px-5 mx-auto block transition-all duration-200">
+                    <button className="bg-(--buttons) py-1 text-white cursor-pointer rounded-2xl shadow-md hover:-translate-y-2 px-5 mx-auto block transition-all duration-200">
                       checkout
                     </button>
                   </div>
@@ -113,7 +113,7 @@ export default function Header() {
             </div>
           </div>
         </nav>
-        <main className="min-h-[90vh] pt-[200px] max-w-[1100px] mx-auto">
+        <main className="min-h-[90vh] pt-50 max-w-275 mx-auto">
           <Outlet />
         </main>
       </>

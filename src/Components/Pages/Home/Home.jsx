@@ -6,7 +6,7 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageProducts, setPageProducts] = useState(
-    products.slice(0, productsInPerPage)
+    products.slice(0, productsInPerPage),
   );
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function Home() {
       {
         length: Math.ceil(products.length / productsInPerPage),
       },
-      (_, index) => index + 1
+      (_, index) => index + 1,
     );
     const buttons = lengthButtons.map((btn) => {
       return (
@@ -39,7 +39,7 @@ export default function Home() {
           className={
             currentPage === btn
               ? "bg-[gray] mx-2 py-1 px-3 rounded-full cursor-pointer"
-              : "bg-[var(--buttons)] mx-2 py-1 px-3 rounded-full cursor-pointer shadow-xl hover:bg-[var(--hover)] hover:text-[var(--bg)] hover:-translate-y-2 transition-all duration-200"
+              : "bg-(--buttons) mx-2 py-1 px-3 rounded-full cursor-pointer shadow-xl hover:bg-(--hover) hover:text-(--bg) hover:-translate-y-2 transition-all duration-200"
           }
           onClick={() => handleCurrentPage(btn)}
         >
@@ -52,12 +52,12 @@ export default function Home() {
 
   return (
     <section id="home">
-      <div className="products grid grid-cols-4 gap-7">
+      <div className="products grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
         {pageProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
-      <div className="min-h-[100px] min-w-[300px] mt-5">{makeButtons()}</div>
+      <div className="min-h-25 min-w-75 mt-5">{makeButtons()}</div>
     </section>
   );
 }
