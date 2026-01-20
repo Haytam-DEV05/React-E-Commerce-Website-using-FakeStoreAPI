@@ -36,12 +36,12 @@ export default function Detailes() {
       <button className="btn btn-primary mb-10" onClick={() => navigate("/")}>
         return Home
       </button>
-      <div className="mb-12 bg-[var(--card)] p-6 rounded shadow">
+      <div className="mb-12 bg-(--card) p-6 rounded shadow">
         <div className="md:grid grid-cols-2 gap-10">
           <img
             src={product.image}
             alt={product.title}
-            className="h-[300px] object-contain mx-auto"
+            className="h-75 object-contain mx-auto"
           />
 
           <div>
@@ -50,7 +50,7 @@ export default function Detailes() {
             <p className="text-xl font-semibold mb-6">{product.price} DH</p>
 
             <button
-              className="bg-[var(--buttons)] text-white px-6 py-2 rounded hover:bg-[var(--hover)] cursor-pointer transition-all duration-200"
+              className="bg-(--buttons) text-white px-6 py-2 rounded hover:bg-(--hover) cursor-pointer transition-all duration-200"
               onClick={() => addToCart(product)}
             >
               Add to cart
@@ -66,13 +66,13 @@ export default function Detailes() {
         {relatedProducts.map((product) => (
           <div
             key={product.id}
-            className="my-6 bg-[var(--card)] p-3 shadow hover:shadow-lg cursor-pointer transition"
+            className="my-6 bg-(--card) p-3 shadow hover:shadow-lg cursor-pointer transition"
             onClick={() => navigate(`/Detailes/${product.id}`)}
           >
             <img
               src={product.image}
               alt={product.title}
-              className="h-[160px] object-contain mx-auto mb-2"
+              className="h-40 object-contain mx-auto mb-2"
             />
             <h4 className="text-sm font-semibold line-clamp-2">
               {product.title}

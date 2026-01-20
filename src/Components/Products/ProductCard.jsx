@@ -9,9 +9,9 @@ export default function ProductCard({ product }) {
   return (
     <div
       onClick={() => navigate(`/Detailes/${product.id}`)}
-      className="bg-[var(--card)] p-4 rounded shadow hover:shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-1"
+      className="bg-(--card) p-4 rounded shadow hover:shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-1"
     >
-      <div className="h-[180px] mb-4">
+      <div className="h-45 mb-4">
         <img
           src={product.image}
           alt={product.title}
@@ -30,7 +30,7 @@ export default function ProductCard({ product }) {
           e.stopPropagation();
           addToCart(product);
         }}
-        className="bg-[var(--buttons)] text-white py-2 rounded"
+        className="bg-(--buttons) text-white py-2 rounded"
       >
         Add to cart
       </button>
