@@ -4,9 +4,11 @@ import { CartProvider } from "./Context/ContextCart";
 
 export default function App() {
   return (
-    <CartProvider>
-      <Header />
+    <>
+      <CartProvider>
+        <Header />
+      </CartProvider>
       <Footer />
-    </CartProvider>
+    </>
   );
 }
