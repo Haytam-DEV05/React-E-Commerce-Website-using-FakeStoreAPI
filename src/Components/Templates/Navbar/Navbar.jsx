@@ -1,8 +1,9 @@
 import { useState } from "react";
-import Theme from "../Theme/Theme";
 import { useContext } from "react";
 import { ContextCart } from "../../../Context/ContextCart";
-
+import { useNavigate } from "react-router";
+// THEME
+import Theme from "../Theme/Theme";
 // REACT-ICONS =>
 import { CiShoppingCart } from "react-icons/ci";
 import { FaXmark } from "react-icons/fa6";
@@ -11,6 +12,18 @@ export default function Navbar() {
   const [openCart, setOpenCart] = useState(false);
   const { cartItems, totalPrice, removeFromCart, ClearCart } =
     useContext(ContextCart);
+  const naivigate = useNavigate();
+  const handleBtnCheckout = () => {
+    naivigate("/Checkout");
+  };
+  const handleBtnClearCart = () => {
+    if (cartItems.length > 0) {
+      if (confirm("Are You Sure?")) {
+        ClearCart();
+      }
+    }
+  };
+
   return (
     <>
       <nav className="fixed w-full right-0 left-0 backdrop-blur-md z-90 shadow-md text-(--text)">
@@ -30,7 +43,9 @@ export default function Navbar() {
                 <div className="length-cart">{cartItems.length}</div>
               </div>
               {/* CART-ITEMS */}
-              <div className={`cart-items ${openCart ? "block" : "hidden"}`}>
+              <div
+                className={`cart-items min-w-75 max-w-100 top-0 right-0 fixed min-h-screen shadow-lg bg-gray-400 ${openCart ? "block" : "hidden"}`}
+              >
                 {/* TOP CART */}
                 <div className="top-cart border-b-2 border-(--bg) pb-2">
                   <div className="mt-3 ml-3" onClick={() => setOpenCart(false)}>
@@ -41,11 +56,7 @@ export default function Navbar() {
                   </p>
                   <button
                     className="bg-blue-300 px-5 py-1 cursor-pointer block mx-auto rounded-md"
-                    onClick={() => {
-                      if (confirm("Are You Sure?")) {
-                        ClearCart();
-                      }
-                    }}
+                    onClick={handleBtnClearCart}
                   >
                     Clear Cart
                   </button>
@@ -93,7 +104,13 @@ export default function Navbar() {
                     <span className="primary">Price :</span>
                     {totalPrice.toFixed(2)} DH
                   </p>
-                  <button className="bg-(--buttons) py-1 text-white cursor-pointer rounded-2xl shadow-md hover:-translate-y-2 px-5 mx-auto block transition-all duration-200">
+                  <button
+                    className="bg-(--buttons) py-1 text-white cursor-pointer rounded-2xl shadow-md hover:-translate-y-2 px-5 mx-auto block transition-all duration-200"
+                    onClick={() => {
+                      handleBtnCheckout();
+                      setOpenCart(false);
+                    }}
+                  >
                     checkout
                   </button>
                 </div>

@@ -12,17 +12,9 @@ nav .cart .length-cart {
     left: -10px;
     display: flex;
     justify-content: center;
-    align-items: center ;
+    align-items: center;
 }
 
-nav .cart .cart-items {
-    position: fixed;
-    min-height: 100vh;
-    background-color: #e8d6d6;
-    width: 300px;
-    top: 0;
-    right: 0;
-}
 
 
 
