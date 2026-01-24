@@ -51,7 +51,7 @@ export default function Home() {
   };
 
   return (
-    <section id="home">
+    <section id="home" className="fade-in">
       <div className="products grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
         {pageProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
